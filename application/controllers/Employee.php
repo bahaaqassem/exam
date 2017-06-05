@@ -30,19 +30,25 @@ class Employee extends CI_Controller {
             $this->load->view('Home/login', $data);
         } else {
             $username = $this->input->post('username');
-            $password = $this->input->post('password');
+            $password = md5($this->input->post('password'));
             $result = $this->Login_model->employeeLogin($username, $password);
             if ($result) {
                 foreach ($result as $row) {
                     $_SESSION['userid'] = $row->id;
                 }
                 if ($row->type == "admin") {
+                    $data = array(
+                        'result' => $this->admin->getAllStudent()
+                    );
                     $this->load->view('admin/header');
-                    $this->load->view('admin/adminHome');
+                    $this->load->view('admin/adminHome', $data);
                 }
                 if ($row->type == "account") {
+                    $data = array(
+                        'result' => $this->admin->getAllStudent()
+                    );
                     $this->load->view('admin/header');
-                    $this->load->view('admin/accountHome');
+                    $this->load->view('admin/accountHome', $data);
                 }
             } else {
                 $data = array(
