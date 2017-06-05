@@ -2,16 +2,16 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class home extends CI_Controller {
+class Employee extends CI_Controller {
 
     function __construct() {
         parent::__construct();
         
     }
 
-    public function index() {
+    public function login() {
         $this->load->view('Home/header');
-        $this->load->view('Home/index');
+        $this->load->view('Home/login');
         $this->load->view('Home/footer');
     }
 

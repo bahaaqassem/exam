@@ -8,6 +8,8 @@
 
     <!-- Basic Page Needs
     ================================================== -->
+    <base href="<?php echo $this->config->item('base_url') ?>" />
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <title>WpF Degree : Home</title>
@@ -82,9 +84,9 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-                <li class="active"><a href="index.html">Employee portal</a></li>
-                <li><a href="course-archive.html">Student portal</a></li>
-               
+                <li class="active"><a href="index.php/Employee/Contact">Employee Portal</a></li>
+                <li><a href="course-archive.html">Student Portal </a></li>
+                
               </ul>           
             </div><!--/.nav-collapse -->
           </div>     
@@ -93,5 +95,3 @@
       <!-- END MENU -->    
     </header>
     <!--=========== END HEADER SECTION ================--> 
-
-    <!--=========== BEGIN SLIDER SECTION ================-->
